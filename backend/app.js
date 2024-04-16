@@ -4,6 +4,7 @@ import cors from "cors";
 import session from "express-session";
 import {Strategy} from "passport-local";
 import cookieParser from "cookie-parser";
+import helmet from "helmet";
 import bcrypt from "bcrypt";
 import dotenv from "dotenv";
 import auth from "./routes/auth-routes.js";
@@ -39,6 +40,7 @@ app.use(cors({
 }));
 app.use(express.json({limit: "50mb", extended: false }));
 app.use(express.urlencoded({limit: "50mb", extended: false}));
+app.use(helmet());
 app.use(cookieParser(process.env.SECRET));
 
 app.use(session({
