@@ -33,6 +33,7 @@ const redisStore = new RedisStore({
 
 const app = express();
 app.set("PORT", process.env.PORT);
+app.set("trust proxy", 1);
 app.use(cors({
     origin: process.env.ORIGIN,
     methods: ["GET", "POST", "PATCH", "DELETE"],
