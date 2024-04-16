@@ -12,8 +12,24 @@ import defaults from "./routes/defaults-routes.js";
 import events from "./routes/events-routes.js";
 import music from "./routes/music-routes.js";
 import widget from "./routes/widgets_routes.js";
-import { v4 } from "uuid";
+import RedisStore from "connect-redis";
+import {createClient} from "redis";
 dotenv.config();
+const redisClient = createClient({
+    password: process.env.REDIS_PASSWORD,
+    socket: {
+        host: process.env.REDIS_HOST,
+        port: process.env.REDIS_PORT
+    }
+});
+
+redisClient.connect().catch(error => console.error(error));
+const redisStore = new RedisStore({
+    client: redisClient,
+    prefix: "chuloapi:",
+});
+
+
 const app = express();
 app.set("PORT", process.env.PORT);
 app.use(cors({
@@ -26,6 +42,7 @@ app.use(express.urlencoded({limit: "50mb", extended: false}));
 app.use(cookieParser(process.env.SECRET));
 
 app.use(session({
+    store: redisStore,
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
