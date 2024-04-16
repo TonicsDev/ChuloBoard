@@ -3,6 +3,7 @@ import passport from "passport";
 import cors from "cors";
 import session from "express-session";
 import {Strategy} from "passport-local";
+import cookieParser from "cookie-parser";
 import bcrypt from "bcrypt";
 import dotenv from "dotenv";
 import auth from "./routes/auth-routes.js";
@@ -11,6 +12,7 @@ import defaults from "./routes/defaults-routes.js";
 import events from "./routes/events-routes.js";
 import music from "./routes/music-routes.js";
 import widget from "./routes/widgets_routes.js";
+import { v4 } from "uuid";
 dotenv.config();
 const app = express();
 app.set("PORT", process.env.PORT);
@@ -21,10 +23,13 @@ app.use(cors({
 }));
 app.use(express.json({limit: "50mb", extended: false }));
 app.use(express.urlencoded({limit: "50mb", extended: false}));
+app.use(cookieParser(process.env.SECRET));
+
 app.use(session({
     secret: process.env.SECRET,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    cookie: {secure: true, signed: true}
 }));
 app.use(passport.initialize());
 app.use(passport.session());

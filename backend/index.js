@@ -3,8 +3,6 @@ import http from "node:http";
 dotenv.config();
 import app from "./app.js";
 import { Server } from "socket.io";
-import { v4 } from "uuid";
-import db from "./db/conn.js";
 import bcrypt from "bcrypt";
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
@@ -14,7 +12,6 @@ const io = new Server(httpServer, {
         credentials: true
     }
 });
-
 io.use(async (socket, next) => {
     if(!socket.handshake.auth)return next(new Error("Invalid credentials"));
     const {token} = socket.handshake.auth;
