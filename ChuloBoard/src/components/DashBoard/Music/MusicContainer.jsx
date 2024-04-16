@@ -9,7 +9,7 @@ import { Alert } from "../../Utils/Alert";
 import ConfigModal from "./Modals/ConfigModal";
 import ClearModal from "./Modals/ClearModal";
 import { socket } from "../../../client/WebSocket";
-
+axios.defaults.withCredentials = true;
 function MusicContainer() {
     const [songs, setSongs] = useState([]);
     const [config, setConfig] = useState({});

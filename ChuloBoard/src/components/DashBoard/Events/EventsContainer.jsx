@@ -6,7 +6,7 @@ import {useAlert} from "../../../hooks/useAlert";
 import {AlertSuccess} from "../../Utils/AlertSuccess";
 import {Alert} from "../../Utils/Alert";
 import EditModal from "./Modals/EditModal";
-
+axios.defaults.withCredentials = true;
 function EventsContainer() {
     const [events, setEvents] = useState([]);
     const [event, setEvent] = useState({

@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 export const userContext = createContext();
+axios.defaults.withCredentials = true;
 
 export function UserProvider({children}) {
     const [user, setUser] = useState({

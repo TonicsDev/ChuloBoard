@@ -7,6 +7,7 @@ import {useAlert} from "../../../hooks/useAlert";
 import {Alert} from "../../Utils/Alert";
 import {AlertSuccess} from "../../Utils/AlertSuccess";
 import allowedUserlevels from "../../../assets/allowedUserlevels.json";
+axios.defaults.withCredentials = true;
 function DefaultsContainer() {
     const [defaults, setDefaults] = useState([]);
     const [command, setCommand] = useState({

@@ -10,6 +10,7 @@ import userlevels from "../../../assets/allowedUserlevels.json";
 import EditModal from "./Modals/EditModal";
 import DeleteModal from "./Modals/DeleteModal";
 import { useUser } from "../../../hooks/useUser";
+axios.defaults.withCredentials = true;
 function CustomContainer() {
     const user = useUser();
     const [commands, setCommands] = useState([]);

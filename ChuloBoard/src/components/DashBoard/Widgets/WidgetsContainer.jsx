@@ -5,7 +5,7 @@ import { Alert } from "../../Utils/Alert";
 import {useUser} from "../../../hooks/useUser";
 import { AlertSuccess } from "../../Utils/AlertSuccess";
 import axios from "axios";
-
+axios.defaults.withCredentials = true;
 function WidgetsContainer() {
     const [widgets, setWidgets] = useState([]);
     const [errorAlert, openErrorAlert, closeErrorAlert] = useAlert(false);
