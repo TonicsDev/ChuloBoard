@@ -46,7 +46,7 @@ app.use(session({
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
-    cookie: {signed: true, sameSite: 'none', httpOnly: true}
+    cookie: {signed: true, sameSite: 'none', httpOnly: true, secure: true}
 }));
 app.use(passport.initialize());
 app.use(passport.session());
