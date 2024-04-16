@@ -1,0 +1,175 @@
+.music-controls
+    width: 100%
+    padding: 12px
+    border-radius: 4px
+    display: flex
+    flex-direction: column
+    background: #0c0c0c
+    border: 1px solid #ccc
+    margin-bottom: 20px
+    .music-header
+        width: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+        border-bottom: 1px solid #ccc
+        padding: 12px 0
+        margin-bottom: 12px
+        .header-title
+            color: #fff
+        .music-buttons
+            display: flex
+            .music-button
+                padding: 8px
+                display: flex
+                align-items: center
+                background:#5742cc
+                margin: 0 3px
+                cursor: pointer
+                color: #fff
+                border: none
+                border-radius: 3px
+                transition: transform 0.2s ease
+                font-size: 0.8em
+                .icon
+                    display: flex
+                    align-items: center
+                    margin-right: 8px
+                &:hover
+                    background: #6449fb
+                    transform: scale(1.01)
+                    outline: 1px solid #f2f2f2
+    .controls-box
+        width: 100%
+        display: flex
+        align-items: center
+        .buttons-controls
+            display: flex
+            align-items: center
+            .play-btn
+                width: 50px
+                height: 50px
+                min-width: 50px
+                margin-right: 6px
+                border-radius: 50%
+                background: #292929
+                padding: 8px
+                display: flex
+                align-items: center
+                justify-content: center
+                border: none
+                color: #fff
+                cursor: pointer
+                &:hover
+                    background: #F2AB27
+                    outline: 2px solid #fff
+            .next-btn
+                width: 40px
+                height: 40px
+                background: #292929
+                color: #fff
+                cursor: pointer
+                border: none
+                border-radius: 50%
+                min-width: 40px
+                display: flex
+                justify-content: center
+                align-items: center
+                &:hover
+                    background: #F2AB27
+                    outline: 2px solid #fff
+        .progress-container
+            width: 100%
+            margin: 15px
+            display: flex
+            align-items: center
+            .progress-time
+                color: #fff
+                font-size: 0.95em
+            .progress-box
+                width: 100%
+                margin: 10px
+                display: flex
+                align-items: center
+                position: relative
+                .progress
+                    width: 100%
+                    height: 10px
+                    border-radius: 20px
+                    background: #292929
+                    position: relative
+                    .progress-fill
+                        width: 0
+                        height: 100%
+                        border-radius: 20px
+                        position: absolute
+                        background: #F2AB27
+                .progress-input
+                    position: absolute
+                    width: 100%
+                    cursor: pointer
+                    z-index: 2
+                    opacity: 0
+            .duration-time
+                color: #fff
+                font-size: 0.97em
+        .volume-container
+            min-width: 200px
+            display: flex
+            .volume-icon
+                display: flex
+                align-items: center
+                margin-right: 10px
+                color: #fff
+            .volume-box
+                display: flex
+                align-items: center
+                position: relative
+                width: 100%
+                .volume-input
+                    position: absolute
+                    width: 100%
+                    z-index: 2
+                    opacity: 0
+                    cursor: pointer
+                .volume-bar
+                    width: 100%
+                    height: 10px
+                    background: #ccc
+                    border-radius: 20px
+                    position: relative
+                    .volume-fill
+                        display: flex
+                        align-items: center
+                        position: absolute
+                        width: 0
+                        height: 100%
+                        border-radius: 20px
+                        background: #F2AB27
+                        &::after
+                            content: ""
+                            position: absolute
+                            width: 15px
+                            height: 15px
+                            display: inline-block
+                            top: -3px
+                            right: -8px
+                            background: #F2AB27
+                            border-radius: 50%
+
+                    
+@media screen and ( max-width: 768px )
+    .music-controls
+        .music-header
+            flex-direction: column
+            .header-title
+                margin-bottom: 10px
+            .music-buttons
+                flex-wrap: wrap
+                justify-content: center
+                .music-button
+                    margin-bottom: 10px
+        .controls-box
+            flex-direction: column
+            .volume-container
+                width: 100%

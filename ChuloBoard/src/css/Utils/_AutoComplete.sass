@@ -1,0 +1,36 @@
+.autocomplete-container
+    position: relative
+    .suggest-list
+        position: absolute
+        top: -15px
+        list-style: none
+        z-index: 8
+        background: #222
+        border-radius: 5px
+        max-width: 300px
+        overflow-y: auto
+        max-height: 300px
+        .suggest
+            color: #fff
+            text-align: start
+            background: none
+            border: none
+            padding: 8px
+            font-size: 0.8em
+            cursor: pointer
+            &:hover
+                background: #00000098
+            &:focus
+                background: #00000098
+                outline: none
+    .suggest-list::-webkit-scrollbar
+        width: 7px
+    .suggest-list::-webkit-scrollbar-thumb
+        background: #000
+        border-radius: 5px
+
+@keyframes auto-height
+    0%
+        height: 0
+    100%
+        height: 300px

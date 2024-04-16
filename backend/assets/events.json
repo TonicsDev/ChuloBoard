@@ -1,0 +1,68 @@
+{
+    "events": [
+        {
+            "name": "Timeout",
+            "message": "Mandaron a dormir a {username} por {duration} segundos",
+            "event": "Penalty",
+            "cooldown": 5,
+            "status": 0,
+            "limit": 1
+        },
+        {
+            "name": "Raid",
+            "message": "{mention} nos ha invadido con {viewers} espectadores",
+            "event": "Raid",
+            "cooldown": 5,
+            "status": 0,
+            "limit": 1
+        },
+        {
+            "name": "Subscripcion",
+            "message": "{username} se acaba de subscribir",
+            "event": "Subscripcion",
+            "cooldown": 5,
+            "status": 0,
+            "limit": 1
+        },
+        {
+            "name": "Resub",
+            "message": "{username} lleva ya {months} meses subscrito",
+            "event": "Subscripcion",
+            "cooldown": 5,
+            "status": 0,
+            "limit": 1
+        },
+        {
+            "name": "GiftSub",
+            "message": "{username} ha regalado una sub a {touser}",
+            "event": "Subscripcion",
+            "cooldown": 5,
+            "status": 0,
+            "limit": 1
+        },
+        {
+            "name": "PrimeSub",
+            "message": "{username} se ha acaba de subscribir con prime",
+            "event": "Subscripcion",
+            "cooldown": 5,
+            "status": 0,
+            "limit": 1
+        },
+        {
+            "name": "ResubPrime",
+            "message": "{username} lleva ya {months} meses subscrito con prime",
+            "event": "Subscripcion",
+            "cooldown": 5,
+            "status": 0,
+            "limit": 1
+        },
+        {
+            "name": "Bits",
+            "message": "{username} ha donado {bits} bits",
+            "event": "Bits",
+            "cooldown": 5,
+            "status": 0,
+            "limit": 1
+        }
+    ]
+}

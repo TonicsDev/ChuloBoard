@@ -1,0 +1,117 @@
+.subpage-container
+    width: 100%
+    height: 100vh
+    display: flex
+    flex-direction: column
+    align-items: center
+    overflow-x: hidden
+    .subpage-header
+        width: 100%
+        height: fit-content
+        padding: 12px
+        align-items: center
+        display: flex
+        background: #0c0c0c
+        margin-bottom: 10px
+        .entries-box
+            align-items: center
+            display: flex
+            .entries-label
+                color: #fff
+                margin-right: 8px
+            .select-input
+                cursor: pointer
+                padding: 6px
+                background: #222
+                color: #fff
+                border-radius: 3px
+                font-size: 0.98em
+                &:focus
+                    outline: 1px solid #ccc
+        .input-container
+            margin-right: 10px
+            display: flex
+            padding: 6px
+            width: 100%
+            border-radius: 3px
+            background: #222
+            .icon
+                color: #fff
+                display: flex
+                align-items: center
+                margin-right: 8px
+                font-size: 1.1em
+            .search-input
+                width: 100%
+                font-size: 0.98em
+                background: none
+                border: none
+                color: #fff
+                &:focus
+                    outline: none
+            &:focus-within
+                outline: 1px solid #555
+                background: #313131
+            &:hover
+                background: #313131
+    .subpage-box
+        width: 98%
+        max-width: 98%
+        height: fit-content
+        padding: 12px
+        border-radius: 4px
+        .box-header
+            width: 100%
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding: 10px 0
+            margin-bottom: 10px
+            .box-title
+                color: #fff
+            .button-container
+                display: flex
+                .button-input
+                    padding: 8px
+                    display: flex
+                    align-items: center
+                    border-radius: 3px
+                    border: none
+                    background: #5742cc
+                    cursor: pointer
+                    transition: transform 0.2s ease
+                    color: #fff
+                    .icon
+                        align-items: center
+                        display: flex
+                        margin-right: 6px
+                        font-size: 1.2em
+                    .button-text
+                        white-space: nowrap
+                    &:hover
+                        background: #6449fb
+                        transform: scale(1.01)
+                        outline: 1px solid #ccc
+
+
+.subpage-container::-webkit-scrollbar
+    width: 7px
+    height: 7px
+.subpage-container::-webkit-scrollbar-thumb
+    background: #ccc
+    border-radius: 3px
+@media screen and ( max-width: 468px )
+    .subpage-container
+        .subpage-header
+            flex-direction: column
+            .input-container
+                order: 2
+            .entries-box
+                margin-bottom: 10px
+                order: 1
+        .subpage-box
+            .box-header
+                flex-direction: column
+                .box-title
+                    margin-bottom: 10px
+    

@@ -1,0 +1,32 @@
+.dashboard
+    height: 100vh
+    background: #111
+    display: grid
+    will-change: grid
+    grid-template-columns: 250px 1fr
+    transition: grid 0.2s ease
+    overflow: hidden
+    .view-subpage
+         width: 100%
+         flex-direction: column
+         display: flex
+         overflow: auto
+
+.collapse-sidemenu
+   grid-template-columns: 80px 1fr
+
+.fade-enter
+   opacity: 0
+.fade-exit
+   opacity: 1
+.fade-enter-active
+   opacity: 1
+.fade-exit-active
+   opacity: 0
+.fade-enter-active,
+.fade-exit-active
+   transition: opacity 200ms
+
+@media screen and ( max-width: 950px )
+   .dashboard
+      grid-template-columns: 1fr

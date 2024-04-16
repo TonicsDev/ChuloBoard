@@ -1,0 +1,85 @@
+.widgets
+    width: 100%
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    overflow-x: hidden
+    .widgets-container
+        width: 100%
+        display: flex
+        justify-content: center
+        padding: 0 12px
+        flex-wrap: wrap
+        .widget-card
+            background: #1e1e1e
+            max-width: 400px
+            margin: 20px
+            border-radius: 3px
+            padding: 12px
+            display: flex
+            flex-direction: column
+            align-items: center
+            .image-box
+                margin-bottom: 8px
+                .icon
+                    width: 100px
+            .info
+                width: 100%
+                display: flex
+                flex-direction: column
+                align-items: center
+                .widget-title
+                    color: #fff
+                .widget-description
+                    color: #fff
+                    font-size: 0.9em
+                    text-align: center
+                    margin-bottom: 10px
+                .input-group
+                    width: 100%
+                    display: flex
+                    flex-direction: column
+                    .input-label
+                        color: #fff
+                    .input-text
+                        width: 100%
+                        background: #292929
+                        padding: 4px
+                        margin-bottom: 8px
+                        border: none
+                        border-radius: 2.5px
+                        margin-right: 8px
+                        color: #fff
+                        font-size: 0.9em
+                        &:hover
+                            outline: 1px solid #555
+                            transition: background 0.1s ease, outline 0.1s ease
+                            background: #323232
+                        &:focus
+                            outline: 2px solid #5742cc
+                .button-container
+                    display: flex
+                    justify-content: center
+                    .button-input
+                        margin: 0 3px
+                        border-radius: 2.5px
+                        padding: 6px
+                        border: none
+                        outline: none
+                        background: #5742cc
+                        color: #fff
+                        font-size: 0.9em
+                        cursor: pointer
+                        transition: transform 0.2s ease
+                        &:hover
+                            background: #6449fb
+                            outline: 1px solid #ccc
+                            transform: scale(1.01)
+                    .copy
+                        background: #f2f2f2
+                        color: #000
+                        &:hover
+                            background: #f2f2f2
+                            outline: 1px solid #ccc
+                            transform: scale(1.01)

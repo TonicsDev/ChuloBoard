@@ -1,0 +1,263 @@
+.modal
+    width: 100%
+    position: fixed
+    top: 0
+    right: 0
+    background: #61616177
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    z-index: 11
+    .modal-container
+        width: 90%
+        max-height: 95vh
+        max-width: 500px
+        background: #1e1e1e
+        padding: 10px
+        border-radius: 5px
+        overflow-y: scroll
+        z-index: 10
+        .modal-header
+            width: 100%
+            display: flex
+            justify-content: space-between
+            align-items: center
+            border-bottom: 1px solid #555
+            padding: 6px 0
+            .modal-title
+                color: #f2f2f2
+            .close
+                color: #e5e5e5
+                cursor: pointer
+                border: none
+                background: none
+                transition: color 0.1s ease
+                font-size: 1.3em
+                &:hover
+                    color: #fff
+        .modal-body
+            padding: 20px 0
+            .modal-text
+                color: #f2f2f2
+                .mark-text
+                    color: #ff0000
+                    padding: 3px
+                    border-radius: 2.5px
+                    background: #ee3a3a2b
+            .modal-form
+                width: 100%
+                display: flex
+                justify-content: center
+                align-items: center
+                flex-direction: column
+                .input-group
+                    width: 100%
+                    display: flex
+                    position: relative
+                    margin-bottom: 20px
+                    .input-label
+                        min-width: 100px
+                        max-width: 100px
+                        margin-right: 6px
+                        color: #fff
+                    .input-container
+                        display: flex
+                        flex-direction: column
+                        width: 100%
+                        .number-input
+                            width: 100%
+                            padding: 4px
+                            outline: 1px solid #1e1e1e
+                            background: #292929
+                            border-radius: 2.5px
+                            font-size: 1em
+                            border: none
+                            transition: background 0.1s ease, outline 0.2s ease
+                            color: #fff
+                            margin-bottom: 6px
+                            &:hover
+                                transition: background 0.1s ease, outline 0.1s ease
+                                outline: 1px solid #ccc
+                        .number-input:focus
+                            outline: 2px solid #5742cc
+                        .text-input
+                            width: 100%
+                            padding: 4px
+                            outline: 1px solid #1e1e1e
+                            color: #fff
+                            border-radius: 2.5px
+                            transition: background 0.1s ease, outline 0.2s ease
+                            font-size: 1em
+                            background: #292929
+                            border: none
+                            margin-bottom: 6px
+                            &:hover
+                                outline: 1px solid #555
+                                transition: background 0.1s ease, outline 0.1s ease
+                                background: #323232
+                        .text-input:focus
+                            outline: 2px solid #5742cc
+                        .text-area
+                            width: 100%
+                            padding: 3px
+                            outline: 1px solid #1e1e1e
+                            border-radius: 2.5px
+                            color: #fff
+                            background: #292929
+                            transition: background 0.1s ease, outline 0.2s ease
+                            font-size: 1em
+                            border: none
+                            resize: vertical
+                            min-height: 80px
+                            margin-bottom: 6px
+                            &:hover
+                                outline: 1px solid #555
+                                background: #303030
+                                transition: background 0.1s ease, outline 0.1s ease
+                        .text-area:focus
+                            outline: 2px solid #5742cc
+                        .select-input
+                            width: 100%
+                            padding: 3px
+                            outline: 1px solid #1e1e1e
+                            background: #292929
+                            color: #fff
+                            border-radius: 2.5px
+                            font-size: 1em
+                            transition: background 0.1s ease, outline 0.2s ease
+                            border: none
+                            margin-bottom: 6px
+                            cursor: pointer
+                            &:hover
+                                transition: background 0.1s ease, outline 0.1s ease
+                                outline: 1px solid #555
+                                background: #303030
+                        .select-input:focus
+                            outline: 2px solid #5742cc
+                        .range-input
+                            width: 100%
+                            margin-bottom: 6px
+                        .switch-box
+                            position: relative
+                            .switch
+                                width: 80px
+                                height: 35px
+                                border-radius: 40px
+                                position: relative
+                                background: #ccc
+                                display: flex
+                                align-items: center
+                                margin-bottom: 6px
+                                .ball
+                                    transition: all 0.3s ease
+                                    display: inline-block
+                                    position: absolute
+                                    width: 30px
+                                    height: 30px
+                                    left: 3px
+                                    border-radius: 40px
+                                    background: #fff
+                            .active-switch
+                                background: #6449fb
+                                .ball
+                                    left: 47px
+                            .check-input
+                                top: 0
+                                position: absolute
+                                height: 100%
+                                opacity: 0
+                                width: 80px
+                                cursor: pointer
+                        .description-input
+                            color: #ccc
+                            font-size: 0.8em
+                        .button-input
+                            padding: 8px
+                            background: none
+                            border: 1px solid #6449fb
+                            border-radius: 2.5px
+                            cursor: pointer
+                            font-size: 1em
+                            margin: 0 5px
+                        .button-input:hover
+                            background: #6449fb
+                            color: #fff
+                        .view-value
+                            color: #f2f2f2
+                    .button-container
+                        width: 100%
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        .button-input
+                            padding: 8px
+                            background: none
+                            border: 1px solid #6449fb
+                            border-radius: 2.5px
+                            cursor: pointer
+                            color: #000
+                            text-decoration: none
+                            font-size: 1em
+                            margin: 0 5px
+                        .button-input:hover
+                            background: #6449fb
+                            color: #fff
+        .modal-footer
+            width: 100%
+            padding-top: 8px
+            border-top: 1px solid #555
+            .button-group
+                width: 100%
+                display: flex
+                justify-content: center
+                align-items: center
+                .button-input
+                    padding: 8px
+                    background: #5742cc
+                    border: 1px solid #5742cc
+                    border-radius: 2.5px
+                    cursor: pointer
+                    font-size: 0.9em
+                    margin: 0 5px
+                    color: #fff
+                    text-decoration: none
+                    transition: transform 0.2s ease
+                .button-input:hover
+                    background: #6449fb
+                    color: #fff
+                    outline: 1px solid #ccc
+                    transform: scale(1.01)
+                .btn-large
+                    width: 100%
+                    text-align: center
+                .delete
+                    background: #E31407
+                    border: 1px solid #E31407
+                    color: #fff
+                .delete:hover
+                    background: #E31407
+            .notice
+                justify-content: flex-end
+    .modal-container::-webkit-scrollbar
+        width: 7px
+        height: 7px
+    .modal-container::-webkit-scrollbar-thumb
+        background: #ccc
+        border-radius: 5px
+
+.notice-modal
+    align-items: flex-start
+    .notice-container
+        margin-top: 20px
+
+@media screen and ( max-width:  768px)
+    .modal
+        .modal-container
+            .modal-body
+                .modal-form
+                    .input-group
+                        flex-direction: column
+                        .input-label
+                            margin-bottom: 6px
+    

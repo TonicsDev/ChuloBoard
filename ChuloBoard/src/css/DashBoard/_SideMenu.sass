@@ -1,0 +1,142 @@
+.sidemenu
+    background: #1e1e1e
+    width: 250px
+    display: flex
+    transition: width 0.2s ease
+    flex-direction: column
+    padding: 10px
+    overflow-y: auto
+    .sidemenu-header
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-evenly
+        margin-bottom: 10px
+        .logo-image
+            margin-right: 10px
+            width: 50px
+        .sidemenu-title
+            font-family: 'Alfa-Slab-One'
+            font-size: 1.1em
+            color: #fff
+            font-weight: normal
+    .sidemenu-body
+        width: 100%
+        display: flex
+        flex-direction: column
+        .link
+            width: 100%
+            display: flex
+            align-items: center
+            color: #fff
+            text-decoration: none
+            margin-bottom: 8px
+            padding: 12px
+            border-radius: 3px
+            &:hover
+                background: #F2AB27,
+                color: #f2f2f2
+            .icon
+                display: flex
+                align-items: center
+                margin-right: 10px
+        .dropdown-link
+            width: 100%
+            margin-bottom: 8px
+            .submenu
+                display: grid
+                grid-template-rows: 0fr
+                transition: grid 0.25s ease
+                .sub-content
+                    overflow: hidden
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    .sub-link
+                        width: 95%
+                        padding: 12px
+                        display: flex
+                        color: #fff
+                        border-radius: 4px
+                        text-decoration: none
+                        margin: 4px 0
+                        &:hover
+                            background: #F2AB27,
+                            color: #f2f2f2
+                        .icon
+                            display: flex
+                            align-items: center
+                            margin-right: 20px
+            .drop
+                grid-template-rows: 1fr
+            .side-link
+                border-radius: 3px
+                width: 100%
+                display: flex
+                text-decoration: none
+                color: #fff
+                padding: 12px
+                &:hover
+                    background: #F2AB27,
+                    color: #f2f2f2
+                .icon
+                    display: flex
+                    align-items: center
+                .link-text
+                    margin: 0 20px
+                .drop-icon
+                    display: flex
+                    width: 100%
+                    align-items: center
+                    justify-content: flex-end
+                    .chevron-icon
+                        transition: transform 0.25s ease
+                    .icon-dropdowned
+                        transform: rotate(180deg)
+            .dropdown-drop
+                background: #F2AB27,
+                color: #f2f2f2
+
+.sidemenu-collapse
+    width: 80px
+    .sidemenu-header
+        justify-content: center
+        .logo-image
+            margin-right: 0
+    .collapse-text
+        display: none
+    .sidemenu-body
+        .dropdown-link
+            .submenu
+                .sub-content
+                    .collapse-link
+                        width: 85%
+                        justify-content: center
+                        .icon
+                            margin-right: 0
+        .collapse-link
+            justify-content: center
+            .icon
+                margin-right: 0
+        .dropdown-link
+            .side-link
+                .collapse-drop-icon
+                    display: none
+@media screen and ( max-width: 950px )
+    .sidemenu
+        position: absolute
+        width: 100%
+        padding: 10px
+        overflow: hidden
+        align-items: center
+        align-items: center
+        height: 100%
+        z-index: 5
+        .sidemenu-header
+            width: fit-content
+        .sidemenu-body
+            width: fit-content
+
+    .sidemenu-collapse
+        width: 0
+        padding: 0

@@ -1,0 +1,42 @@
+[
+    {
+        "name": "!guau",
+        "description": "Reproduce un ruido de perro cada vez que esta comando es ejecutado.",
+        "userlevel": "Cualquiera",
+        "cooldown": 5,
+        "limit": 0,
+        "status": true
+    },
+    {
+        "name": "!comandos",
+        "description": "Muestra una lista de comandos disponibles y permite a tus moderadores modificar comandos.",
+        "userlevel": "Cualquiera",
+        "cooldown": 5,
+        "limit": 0,
+        "status": true
+    },
+    {
+        "name": "!titulo",
+        "description": "Muestra el titulo actual del stream y permite a los moderadores cambiar el título del stream.",
+        "userlevel": "Cualquiera",
+        "cooldown": 5,
+        "limit": 0,
+        "status": true
+    },
+    {
+        "name": "!juego",
+        "description": "Muestra el juego actual del stream y permite a los moderadores cambiar el juego del stream.",
+        "userlevel": "Cualquiera",
+        "cooldown": 5,
+        "limit": 0,
+        "status": true
+    },
+    {
+        "name": "!musica",
+        "description": "Permite a los espectadores agregar canciones a la lista de reproducción",
+        "userlevel": "Cualquiera",
+        "cooldown": 5,
+        "limit": 0,
+        "status": true
+    }
+]

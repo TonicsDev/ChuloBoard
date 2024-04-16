@@ -1,0 +1,42 @@
+.header-menu
+    width: 100%
+    padding: 10px
+    background: #1e1e1e,
+    .box-icon
+        width: 45px
+        height: 45px
+        display: flex
+        align-items: center
+        cursor: pointer
+        position: relative
+        z-index: 8
+        .icon, .icon:after, .icon:before
+            width: 45px
+            height: 3px
+            left: 0
+            display: block
+            position: relative
+            background: #fff
+            transition: transform 0.3s ease, width 0.3s ease, top 0.3s ease
+        .icon:after, .icon:before
+            content: ""
+            will-change: transform
+            position: absolute
+        .icon:after
+            top: 15px
+        .icon:before
+            top: -15px
+
+@media screen and (max-width:  950px)
+    .header-menu
+        .box-icon
+            .icon-open
+                width: 0
+            .icon-open:after
+                top: 0
+                transform: rotate(-45deg)
+            .icon-open:before
+                top: 0
+                transform: rotate(45deg)
+
+    
