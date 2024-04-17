@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 import Home from './pages/Home';
 import "./css/app.css";
 import { UserProvider } from './contexts/User';
@@ -9,6 +9,7 @@ import algoliasearch from "algoliasearch/lite.js";
 import { InstantSearch } from 'react-instantsearch-core';
 import DashBoardView from './pages/DashboardView';
 import GuauWidget from './pages/GuauWidget';
+import NotFound from './pages/NotFound';
 
 const searchClient = algoliasearch(
   import.meta.env.VITE_ALGOLIA_ID,
@@ -28,6 +29,8 @@ function App() {
               <Route path='/dashboard/*' element={<Dashboard/>}/>
               <Route path='/view/*' element={<DashBoardView/>}/>
               <Route path='/guau/:id' element={<GuauWidget/>}/>
+              <Route path='/404' element={<NotFound/>}/>
+              <Route path='*' element={<Navigate to={"/404"}/>}/>
             </Routes>
           </UserProvider>
         </Router>

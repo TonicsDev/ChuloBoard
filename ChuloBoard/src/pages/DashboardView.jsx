@@ -1,10 +1,11 @@
 import { useMediaQuery } from "@mui/material"
 import { useCallback, useState } from "react";
 import SideMenuView from "../components/DashboardView/SideMenuView";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import CommandsContainer from "../components/DashboardView/Commands/CommandsContainer";
 import Header from "../components/DashBoard/Header";
 import MusicContainer from "../components/DashboardView/Music/MusicContainer";
+import NotFound from "./NotFound";
 
 function DashBoardView() {
     const match = useMediaQuery('(max-width: 950px)');
@@ -23,6 +24,7 @@ function DashBoardView() {
                 <Routes>
                     <Route path="commands" element={<CommandsContainer/>}/>
                     <Route path="music" element={<MusicContainer/>}/>
+                    <Route path='*' element={<Navigate to={"/404"}/>}/>
                 </Routes>
             </div>
         </div>

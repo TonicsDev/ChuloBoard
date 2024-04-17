@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import SideMenu from "../components/DashBoard/SideMenu";
 import CustomContainer from "../components/DashBoard/Customs/CustomsContainer";
 import DefaultsContainer from "../components/DashBoard/defaults/DefaultsContainer";
@@ -10,6 +10,7 @@ import EventsContainer from "../components/DashBoard/Events/EventsContainer";
 import MusicContainer from "../components/DashBoard/Music/MusicContainer";
 import { socket } from "../client/WebSocket";
 import WidgetsContainer from "../components/DashBoard/Widgets/WidgetsContainer";
+import NotFound from "./NotFound";
 function Dashboard() {
     const user = useUser();
     const match = useMediaQuery('(max-width: 950px)');
@@ -38,6 +39,7 @@ function Dashboard() {
                     <Route path="events" element={<EventsContainer/>}/>
                     <Route path="music" element={<MusicContainer/>}/>
                     <Route path="widgets" element={<WidgetsContainer/>}/>
+                    <Route path="*" element={<Navigate to={"/404"}/>}/>
                 </Routes>
             </div>
         </div>
