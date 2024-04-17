@@ -30,23 +30,11 @@ function Login() {
             value: "#000000"
         }
     }, preset: "snow"};
-    function handleUsername(e) {
-        setCredentials({
-            ...credentials,
-            username: e.target.value
-        });
-    }
-    function handlePassword(e) {
-        setCredentials({
-            ...credentials,
-            password: e.target.value
-        });
-    }
     
     function login(e) {
         e.preventDefault();
         axios.post(`${import.meta.env.VITE_API_URL}auth`, {username: e.target.username.value, password: e.target.password.value}).then(res => {
-            return navigate("/dashboard");
+            return navigate("/dashboard/customs");
         }).catch(error => {
             return console.error(error);
         });

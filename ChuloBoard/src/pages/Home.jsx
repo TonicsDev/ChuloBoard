@@ -22,7 +22,7 @@ function Home() {
 
     function directLogin() {
         if(user.id) {
-            navigate("/dashboard");
+            navigate("/dashboard/customs");
         } else {
             navigate("/login");
         }
