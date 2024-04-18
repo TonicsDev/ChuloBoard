@@ -61,7 +61,7 @@ function Home() {
                 <Particles id="tsparticles" options={options}></Particles>
             }
             <div className="presentation">
-                <img src="https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_35575bb4ba354b69a9b750ce9b2f0963/static/light/3.0" width="100" height="100" alt="logo" className="image" />
+                <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/224950e5-3a79-4243-88ea-716474aa7e2f-profile_image-300x300.png" width="100" height="100" alt="logo" className="image" />
                 <h1 className="presentation-title">
                     ChuloBoard
                 </h1>

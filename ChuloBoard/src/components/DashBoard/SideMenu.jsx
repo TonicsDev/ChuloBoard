@@ -12,7 +12,7 @@ function SideMenu({collapse, closeMenu}) {
     return(
         <div className={`sidemenu ${collapse ? "sidemenu-collapse" : ""}`}>
             <div className="sidemenu-header">
-                <img src="https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_35575bb4ba354b69a9b750ce9b2f0963/static/light/3.0" alt="logo-chuloboard" className="logo-image" />
+                <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/224950e5-3a79-4243-88ea-716474aa7e2f-profile_image-300x300.png" alt="logo-chuloboard" className="logo-image" />
                 <h3 className={`sidemenu-title ${collapse ? "collapse-text" : ""}`}>
                     ChuloBoard
                 </h3>
