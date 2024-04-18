@@ -37,7 +37,7 @@ async function commandExist(req, res, next) {;
   }).then(command => {
       if(command.rows.length <= 0) {
         transaction.close();
-        res.status(404).json({error: "Command not found"});
+        return res.status(404).json({error: "Command not found"});
       }
       transaction.commit();
       return next();
@@ -94,11 +94,11 @@ async function updateCustomCommand(req, res) {
     args: result.data
   }).then(() => {
     transaction.commit();
+    return res.json({success: "command updated"});
   }).catch(error => {
     transaction.close();
     return res.status(500).json({error: "An unexpected error"});
   })
-  res.json({success: "command updated"});
 }
 
 async function deleteCustomCommand(req, res) {

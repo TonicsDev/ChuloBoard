@@ -16,7 +16,7 @@ async function eventExist(req, res, next) {
     }).then(events => {
         if(events.rows.length <= 0) {
             transaction.close();
-            res.status(404).json({error: "Command not found"})
+            return res.status(404).json({error: "Command not found"})
         }
         transaction.commit();
         next();
@@ -38,10 +38,10 @@ async function getEvents(req, res) {
         args: result.data
     }).then(events => {
         transaction.commit();
-        res.json(events.rows);
+        return res.json(events.rows);
     }).catch(error => {
         transaction.close();
-        res.status(500).json({error: "An error unexpected"});
+        return res.status(500).json({error: "An error unexpected"});
     });
 }
 

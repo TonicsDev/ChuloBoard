@@ -35,7 +35,7 @@ async function commandExist(req, res, next) {
     }).then(command => {
         if(command.rows.length <= 0) {
             transaction.close();
-            res.status(404).json({error: "Command not found"});
+            return res.status(404).json({error: "Command not found"});
         }
         transaction.commit();
         return next();
