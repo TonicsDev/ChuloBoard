@@ -7,7 +7,7 @@ import { socket } from "../../../client/WebSocket";
 function Music({songs, openRequestModal, openConfigModal, openClearModal, deleteSong, promoteSong}) {
     const [duration, setDuration] = useState(0);
     const [progress, setProgress] = useState(0);
-    const [volume, setVolume] = useState(0);
+    const [volume, setVolume] = useState(0.5);
     const [isPlaying, setIsPlaying] = useState(false);
     const videoRef = useRef(null);
 
