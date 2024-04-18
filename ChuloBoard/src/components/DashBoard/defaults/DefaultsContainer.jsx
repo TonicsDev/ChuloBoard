@@ -11,6 +11,7 @@ axios.defaults.withCredentials = true;
 function DefaultsContainer() {
     const [defaults, setDefaults] = useState([]);
     const [command, setCommand] = useState({
+        name: "",
         userlevel: "Cualquiera",
         cooldown: 5,
         queueMax: 0
@@ -104,6 +105,7 @@ function DefaultsContainer() {
     const openEdit = useCallback((index) => {
         setIndex(index);
         setCommand({
+            name: defaults[index].name,
             userlevel: defaults[index].userlevel,
             cooldown: defaults[index].cooldown,
             queueMax: defaults[index].queueMax

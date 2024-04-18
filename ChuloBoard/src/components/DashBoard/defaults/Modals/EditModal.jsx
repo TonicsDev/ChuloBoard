@@ -55,7 +55,7 @@ export default function EditModal({command, setCommand, updateCommand, closeEdit
             <Configure facetFilters={["category:commands"]}/>
             <motion.form className="modal-container" animate={control} onSubmit={updateCommand} variants={variants} onAnimationComplete={anim => closeModal(anim)}>
                 <div className="modal-header">
-                    <h3 className="modal-title">Editar comando</h3>
+                    <h3 className="modal-title">Editar comando: {command?.name}</h3>
                     <div className="close" onClick={closeAnimation}>
                         <AiOutlineClose/>
                     </div>
