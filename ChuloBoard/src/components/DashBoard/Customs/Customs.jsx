@@ -98,6 +98,17 @@ function Customs({commands, changeStatus, openCreateModal, openEdit, openDelete}
                         </thead>
                         <tbody>
                             {
+                                commands
+                                ?.filter(command => command.name.includes(search) || command.message.includes(search))
+                                .slice(page * forPage, page * forPage + forPage)
+                                .filter(command => command.name.includes(search) || command.message.includes(search)).length <= 0 &&
+                                <tr className="row-table">
+                                    <td className="ceil-table empty" colSpan={5}>
+                                        <span>No hay resultados</span>
+                                    </td>
+                                </tr>
+                            }
+                            {
                               commands
                               ?.filter(command => command.name.includes(search) || command.message.includes(search))
                               .slice(page * forPage, page * forPage + forPage)

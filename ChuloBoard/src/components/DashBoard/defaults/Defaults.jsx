@@ -33,6 +33,14 @@ function Defaults({defaults, openEdit, changeStatus}) {
                             </tr>
                         </thead>
                         <tbody>
+                            {
+                                defaults?.length <= 0 &&
+                                <tr className="row-table">
+                                    <td className="ceil-table empty" colSpan={3}>
+                                        <span>No hay resultados</span>
+                                    </td>
+                                </tr>
+                            }
                             {defaults?.map((command, index) => 
                                 <tr className="row-table" key={index}>
                                     <td className="ceil-table status-ceil">

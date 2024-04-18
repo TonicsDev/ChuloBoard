@@ -42,6 +42,14 @@ function MusicList({songs, deleteSong, promoteSong}) {
                     </thead>
                     <tbody>
                         {
+                            songs?.length <= 0 &&
+                            <tr className="row-table">
+                                <td className="ceil-table empty" colSpan={6}>
+                                    <span>No hay canciones en la lista de reproducción</span>
+                                </td>
+                            </tr>
+                        }
+                        {
                             songs?.map((song, index) => 
                                 index > 0 &&
                                 <tr className="row-table" key={index}>
