@@ -265,7 +265,8 @@ async function updateConfig(req, res) {
 }
 
 async function clearList(req, res) {
-    await db.execute('DELETE FROM songs').then(() => {
+    const transaction = await db.transaction("write")
+    transaction.execute('DELETE FROM songs').then(() => {
         return res.json({success: 'list clean'});
     }).catch(error => {
         return res.status(500).json({error: "An error unexpected has ocurred to clear music list"});
