@@ -10,6 +10,13 @@ function getSession(req, res) {
 }
 
 function logout(req, res) {
-
+    if(!req.isAuthenticated()) return res.status(400).json({type: "not_exist", error: "The sesssion not exist"});
+    req.session.destroy((err) => {
+        if(err) {
+            return res.status(500).json({error: "An error has ocurred when trying to logout"});
+        } else {
+            return res.json({success: "closed session"});
+        }
+    })
 }
 export {login, getSession, logout}

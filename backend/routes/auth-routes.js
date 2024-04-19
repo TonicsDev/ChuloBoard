@@ -1,6 +1,6 @@
 import { Router } from "express";
 import passport from "passport";
-import {getSession, login} from "../controllers/auth-controllers.js";
+import {getSession, login, logout} from "../controllers/auth-controllers.js";
 const router = Router();
 
 router.route("/")
@@ -10,6 +10,6 @@ router.route("/session")
     .get(getSession);
 
 router.route("/logout")
-    .put()
+    .delete(logout);
 
 export default router;
