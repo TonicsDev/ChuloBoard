@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
 import SideMenu from "../components/DashBoard/SideMenu";
 import CustomContainer from "../components/DashBoard/Customs/CustomsContainer";
 import DefaultsContainer from "../components/DashBoard/defaults/DefaultsContainer";
@@ -11,10 +11,16 @@ import MusicContainer from "../components/DashBoard/Music/MusicContainer";
 import { socket } from "../client/WebSocket";
 import WidgetsContainer from "../components/DashBoard/Widgets/WidgetsContainer";
 import NotFound from "./NotFound";
+import axios from "axios";
+import { useAlert } from "../hooks/useAlert";
+import { Alert } from "../components/Utils/Alert";
 function Dashboard() {
     const user = useUser();
     const match = useMediaQuery('(max-width: 950px)');
+    const navigate = useNavigate();
     const [collapse, setCollapse] = useState(false);
+    const [error, setError] = useState("");
+    const [errorAlert, openErrorAlert, closeErrorAlert] = useAlert(false);
     const toggleCollapse = useCallback(() => {
         setCollapse(!collapse);
     }, [collapse]);
@@ -25,12 +31,21 @@ function Dashboard() {
         }
     }, [match]);
 
+    const logout = useCallback(() => {
+        axios.delete(`${import.meta.env.VITE_API_URL}auth/logout`).then(res => {
+            navigate("/");
+        }).catch(error => {
+            setError("Hubo un error al cerrar sesión");
+            openErrorAlert();
+        });
+    }, [])
+
     useEffect(() => {
         socket.emit('join-channel', import.meta.env.VITE_CHANNEL);
     }, []);
     return(
         <div className={`dashboard ${collapse ? "collapse-sidemenu" : ""}`}>
-            <SideMenu collapse={collapse} closeMenu={closeMenu}/>
+            <SideMenu collapse={collapse} closeMenu={closeMenu} logout={logout}/>
             <div className="view-subpage">
                 <Header collapse={collapse} toggleCollapse={toggleCollapse}/>
                 <Routes>
@@ -41,6 +56,7 @@ function Dashboard() {
                     <Route path="widgets" element={<WidgetsContainer/>}/>
                     <Route path="*" element={<Navigate to={"/404"}/>}/>
                 </Routes>
+                {errorAlert && <Alert error={error} closeAlert={closeErrorAlert}/>}
             </div>
         </div>
     )

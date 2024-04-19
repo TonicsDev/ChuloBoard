@@ -6,9 +6,9 @@ import { VscSettings } from "react-icons/vsc";
 import { AiFillThunderbolt } from "react-icons/ai";
 import { BsMusicNoteBeamed } from "react-icons/bs";
 import { HiSquare3Stack3D } from "react-icons/hi2";
-import { MdWidgets } from "react-icons/md";
+import { MdWidgets, MdLogout } from "react-icons/md";
 
-function SideMenu({collapse, closeMenu}) {
+function SideMenu({collapse, closeMenu, logout}) {
     return(
         <div className={`sidemenu ${collapse ? "sidemenu-collapse" : ""}`}>
             <div className="sidemenu-header">
@@ -69,6 +69,16 @@ function SideMenu({collapse, closeMenu}) {
                             Widgets
                         </span>
                     </NavLink>
+                </Tooltip>
+                <Tooltip title="widgets" placement="right">
+                    <div className={`link ${collapse ? "collapse-link" : ""}`} onClick={logout}>
+                        <div className="icon">
+                            <MdLogout/>
+                        </div>
+                        <span className={`link-text ${collapse ? "collapse-text" : ""}`}>
+                            Cerrar sesión
+                        </span>
+                    </div>
                 </Tooltip>
             </div>
         </div>
