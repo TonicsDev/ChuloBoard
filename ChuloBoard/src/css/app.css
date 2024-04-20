@@ -812,6 +812,7 @@ body {
 .sidemenu .sidemenu-body .link {
   width: 100%;
   display: flex;
+  cursor: pointer;
   align-items: center;
   color: #fff;
   text-decoration: none;
