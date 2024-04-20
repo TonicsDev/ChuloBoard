@@ -70,7 +70,7 @@ function SideMenu({collapse, closeMenu, logout}) {
                         </span>
                     </NavLink>
                 </Tooltip>
-                <Tooltip title="widgets" placement="right">
+                <Tooltip title="cerrar sesión" placement="right">
                     <div className={`link ${collapse ? "collapse-link" : ""}`} onClick={logout}>
                         <div className="icon">
                             <MdLogout/>
