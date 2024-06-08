@@ -10,7 +10,7 @@ function Music() {
                         Uso
                     </h4>
                     <p className="feature-description">
-                        !musica agregar <span className="highlight">[url de youtube/nombre]</span>
+                        !musica agregar <span className="highlight">[url de youtube/playlist/nombre]</span>
                     </p>
                     <div className="feature-variables">
                         <h4 className="variables-title">
