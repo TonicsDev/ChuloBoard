@@ -10,6 +10,7 @@ import { InstantSearch } from 'react-instantsearch-core';
 import DashBoardView from './pages/DashboardView';
 import GuauWidget from './pages/GuauWidget';
 import NotFound from './pages/NotFound';
+import Docs from './pages/Docs';
 
 const searchClient = algoliasearch(
   import.meta.env.VITE_ALGOLIA_ID,
@@ -26,6 +27,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Home/>}/>
               <Route path='/login' element={<Login/>}/>
+              <Route path='/docs/*' element={<Docs/>}/>
               <Route path='/dashboard/*' element={<Dashboard/>}/>
               <Route path='/view/*' element={<DashBoardView/>}/>
               <Route path='/guau/:id' element={<GuauWidget/>}/>

@@ -21,6 +21,12 @@
   font-weight: 500;
   font-display: swap;
 }
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto-Light.woff") format("woff"), url("../assets/fonts/Roboto-Light.ttf") format("truetype");
+  font-weight: lighter;
+  font-display: swap;
+}
 * {
   padding: 0;
   margin: 0;
@@ -1493,4 +1499,64 @@ body {
   background: #f2f2f2;
   outline: 1px solid #ccc;
   transform: scale(1.01);
+}
+
+.documentation {
+  width: 100%;
+  height: 100vh;
+  background: #111;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  transition: grid 0.2s ease;
+  overflow: hidden;
+}
+.documentation .view-subpage {
+  overflow-y: auto;
+}
+.documentation .view-subpage .doc {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.documentation .view-subpage .doc .feature {
+  margin-bottom: 20px;
+  color: #fff;
+  font-weight: lighter;
+}
+.documentation .view-subpage .doc .feature .feature-title {
+  margin-bottom: 10px;
+}
+.documentation .view-subpage .doc .feature .feature-usage {
+  margin-bottom: 20px;
+}
+.documentation .view-subpage .doc .feature .feature-usage .highlight {
+  background: #4635D3;
+  padding: 2px;
+  border-radius: 2px;
+}
+.documentation .view-subpage .doc .feature .feature-usage .feature-description {
+  font-size: 1em;
+}
+.documentation .view-subpage .doc .feature .feature-usage p {
+  margin: 10px 0;
+  font-size: 0.9em;
+}
+.documentation .view-subpage .doc .feature .feature-usage .feature-variables {
+  margin-top: 20px;
+}
+.documentation .view-subpage .doc .feature .feature-example p {
+  margin: 10px 0;
+  font-size: 0.9em;
+}
+
+.collapse-sidemenu {
+  grid-template-columns: 80px 1fr;
+}
+
+@media screen and (max-width: 950px) {
+  .documentation {
+    grid-template-columns: 1fr;
+  }
 }/*# sourceMappingURL=app.css.map */
