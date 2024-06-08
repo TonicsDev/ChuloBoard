@@ -18,7 +18,7 @@ function SideMenuDocs({collapse, closeMenu}) {
                 </h3>
             </div>
             <div className="sidemenu-body">
-                <Tooltip title="Personalizados" placement="right">
+                <Tooltip title="Comandos" placement="right">
                         <NavLink to={"commands"} className={`link ${collapse ? "collapse-link" : ""}`} onClick={closeMenu}>
                             <div className="icon">
                                 <FaMagic/>
