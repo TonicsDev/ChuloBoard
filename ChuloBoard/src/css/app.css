@@ -1512,6 +1512,8 @@ body {
 }
 .documentation .view-subpage {
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 .documentation .view-subpage .doc {
   width: 100%;
@@ -1549,6 +1551,14 @@ body {
 .documentation .view-subpage .doc .feature .feature-example p {
   margin: 10px 0;
   font-size: 0.9em;
+}
+.documentation .view-subpage::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+.documentation .view-subpage::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
 }
 
 .collapse-sidemenu {
