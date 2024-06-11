@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import Image404 from "../assets/404.png";
+import { AiFillHome } from "react-icons/ai";
 function NotFound() {
     return(
         <div className="not-found">
@@ -9,6 +11,9 @@ function NotFound() {
             <h2 className="subtitle">
                 Página no encontrada
             </h2>
+            <Link to={"/"} className="return-link">
+                Volver a inicio
+            </Link>
         </div>
     )
 }
