@@ -24,7 +24,7 @@
 @font-face {
   font-family: "Roboto";
   src: url("../assets/fonts/Roboto-Light.woff") format("woff"), url("../assets/fonts/Roboto-Light.ttf") format("truetype");
-  font-weight: lighter;
+  font-weight: 300;
   font-display: swap;
 }
 * {
@@ -1525,7 +1525,7 @@ body {
 .documentation .view-subpage .doc .feature {
   margin-bottom: 20px;
   color: #fff;
-  font-weight: lighter;
+  font-weight: 300;
 }
 .documentation .view-subpage .doc .feature .feature-title {
   margin-bottom: 10px;
