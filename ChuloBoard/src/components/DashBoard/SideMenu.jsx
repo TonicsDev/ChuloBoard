@@ -72,7 +72,7 @@ function SideMenu({collapse, closeMenu, logout}) {
                     </NavLink>
                 </Tooltip>
                 <Tooltip title="Documentación" placement="right">
-                    <NavLink to={"docs/commands"} className={`link ${collapse ? "collapse-link" : ""}`} onClick={closeMenu}>
+                    <NavLink to={"/docs/commands"} className={`link ${collapse ? "collapse-link" : ""}`} onClick={closeMenu}>
                         <div className="icon">
                             <SlDocs/>
                         </div>
