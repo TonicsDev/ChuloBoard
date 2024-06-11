@@ -1,13 +1,8 @@
 import {Tooltip} from "@mui/material";
-import DropDownLink from "../SideMenu/DropDownLink";
 import { FaMagic } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
-import { VscSettings } from "react-icons/vsc";
-import { AiFillThunderbolt } from "react-icons/ai";
+import { NavLink } from "react-router-dom";;
 import { BsMusicNoteBeamed } from "react-icons/bs";
-import { HiSquare3Stack3D } from "react-icons/hi2";
-import { MdWidgets, MdLogout } from "react-icons/md";
-
+import { MdDashboard } from "react-icons/md";
 function SideMenuDocs({collapse, closeMenu}) {
     return(
         <div className={`sidemenu ${collapse ? "sidemenu-collapse" : ""}`}>
@@ -35,6 +30,16 @@ function SideMenuDocs({collapse, closeMenu}) {
                         </div>
                         <span className={`link-text ${collapse ? "collapse-text" : ""}`}>
                             !Musica
+                        </span>
+                    </NavLink>
+                </Tooltip>
+                <Tooltip title="DashBoard" placement="right">
+                    <NavLink to={"/dashboard/customs"} className={`link ${collapse ? "collapse-link" : ""}`} onClick={closeMenu}>
+                        <div className="icon">
+                            <MdDashboard/>
+                        </div>
+                        <span className={`link-text ${collapse ? "collapse-text" : ""}`}>
+                            Dashboard
                         </span>
                     </NavLink>
                 </Tooltip>
