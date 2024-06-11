@@ -7,6 +7,7 @@ import { AiFillThunderbolt } from "react-icons/ai";
 import { BsMusicNoteBeamed } from "react-icons/bs";
 import { HiSquare3Stack3D } from "react-icons/hi2";
 import { MdWidgets, MdLogout } from "react-icons/md";
+import { SlDocs } from "react-icons/sl";
 
 function SideMenu({collapse, closeMenu, logout}) {
     return(
@@ -67,6 +68,16 @@ function SideMenu({collapse, closeMenu, logout}) {
                         </div>
                         <span className={`link-text ${collapse ? "collapse-text" : ""}`}>
                             Widgets
+                        </span>
+                    </NavLink>
+                </Tooltip>
+                <Tooltip title="Documentación" placement="right">
+                    <NavLink to={"docs/commands"} className={`link ${collapse ? "collapse-link" : ""}`} onClick={closeMenu}>
+                        <div className="icon">
+                            <SlDocs/>
+                        </div>
+                        <span className={`link-text ${collapse ? "collapse-text" : ""}`}>
+                            Documentación
                         </span>
                     </NavLink>
                 </Tooltip>
