@@ -19,7 +19,7 @@ function Docs() {
         }
     }, [match]);
     return(
-        <div className={`documentation ${collapse ? 'collapse-sidemenu' : ''}`}>
+        <div className={`documentation ${collapse ? 'collapse-docs' : ''}`}>
             <SideMenuDocs collapse={collapse} closeMenu={closeMenu}/>
             <div className="view-subpage">
                 <Header collapse={collapse} toggleCollapse={toggleCollapse}/>
