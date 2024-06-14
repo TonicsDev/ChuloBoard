@@ -185,7 +185,7 @@ function Music() {
             </article>
             <article className="feature">
                 <h3 className="feature-title">
-                   Despausar la canción actual
+                  Modificar el volumen
                 </h3>
                 <div className="feature-usage">
                     <h4 className="usage-title">
