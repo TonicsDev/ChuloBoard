@@ -1531,6 +1531,7 @@ body {
 }
 .documentation .view-subpage .doc .feature .feature-usage .feature-description {
   font-size: 1em;
+  line-height: 30px;
 }
 .documentation .view-subpage .doc .feature .feature-usage p {
   margin: 10px 0;
