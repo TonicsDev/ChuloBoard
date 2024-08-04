@@ -11,6 +11,7 @@ import DashBoardView from './pages/DashboardView';
 import GuauWidget from './pages/GuauWidget';
 import NotFound from './pages/NotFound';
 import Docs from './pages/Docs';
+import ProtectedRoute from './components/Utils/ProtectedRoute';
 
 const searchClient = algoliasearch(
   import.meta.env.VITE_ALGOLIA_ID,
@@ -28,6 +29,9 @@ function App() {
               <Route path='/' element={<Home/>}/>
               <Route path='/login' element={<Login/>}/>
               <Route path='/docs/*' element={<Docs/>}/>
+              <Route element={<ProtectedRoute/>}>
+                <Route path='/dashboard/*' element={<Dashboard/>}/>
+              </Route>
               <Route path='/dashboard/*' element={<Dashboard/>}/>
               <Route path='/view/*' element={<DashBoardView/>}/>
               <Route path='/guau/:id' element={<GuauWidget/>}/>
