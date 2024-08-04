@@ -15,7 +15,7 @@ import axios from "axios";
 import { useAlert } from "../hooks/useAlert";
 import { Alert } from "../components/Utils/Alert";
 function Dashboard() {
-    const user = useUser();
+    const {user} = useUser();
     const match = useMediaQuery('(max-width: 950px)');
     const navigate = useNavigate();
     const [collapse, setCollapse] = useState(false);
@@ -31,21 +31,12 @@ function Dashboard() {
         }
     }, [match]);
 
-    const logout = useCallback(() => {
-        axios.delete(`${import.meta.env.VITE_API_URL}auth/logout`).then(res => {
-            navigate("/");
-        }).catch(error => {
-            setError("Hubo un error al cerrar sesión");
-            openErrorAlert();
-        });
-    }, [])
-
     useEffect(() => {
         socket.emit('join-channel', import.meta.env.VITE_CHANNEL);
     }, []);
     return(
         <div className={`dashboard ${collapse ? "collapse-sidemenu" : ""}`}>
-            <SideMenu collapse={collapse} closeMenu={closeMenu} logout={logout}/>
+            <SideMenu collapse={collapse} closeMenu={closeMenu}/>
             <div className="view-subpage">
                 <Header collapse={collapse} toggleCollapse={toggleCollapse}/>
                 <Routes>
