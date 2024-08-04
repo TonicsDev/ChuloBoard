@@ -8,8 +8,10 @@ import { BsMusicNoteBeamed } from "react-icons/bs";
 import { HiSquare3Stack3D } from "react-icons/hi2";
 import { MdWidgets, MdLogout } from "react-icons/md";
 import { SlDocs } from "react-icons/sl";
+import { useUser } from "../../hooks/useUser";
 
-function SideMenu({collapse, closeMenu, logout}) {
+function SideMenu({collapse, closeMenu}) {
+    const {logout} = useUser();
     return(
         <div className={`sidemenu ${collapse ? "sidemenu-collapse" : ""}`}>
             <div className="sidemenu-header">
