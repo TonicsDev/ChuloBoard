@@ -4,13 +4,11 @@ import Particles, {initParticlesEngine} from "@tsparticles/react";
 import {loadStarsPreset} from "@tsparticles/preset-stars";
 import { loadFull } from "tsparticles";
 import { loadSnowPreset } from "@tsparticles/preset-snow";
-import { useUser } from "../hooks/useUser";
 import { useNavigate } from "react-router-dom";
 axios.defaults.withCredentials = true;
 function Login() {
     const [init, setInit] = useState(false);
     const navigate = useNavigate();
-    const user = useUser();
     const [credentials, setCredentials] = useState({
         username: "",
         password: ""
