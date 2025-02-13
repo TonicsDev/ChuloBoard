@@ -1,6 +1,5 @@
 import { createClient } from "@libsql/client";
 import dotenv from "dotenv";
-import events from "../assets/events.json" assert{type: "json"};
 dotenv.config();
 
 const db = createClient({
