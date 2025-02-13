@@ -15,13 +15,10 @@ import music from "./routes/music-routes.js";
 import widget from "./routes/widgets_routes.js";
 import RedisStore from "connect-redis";
 import {createClient} from "redis";
+import { ENV_VARIABLES } from "./env_variables.js";
 dotenv.config();
 const redisClient = createClient({
-    password: process.env.REDIS_PASSWORD,
-    socket: {
-        host: process.env.REDIS_HOST,
-        port: process.env.REDIS_PORT
-    }
+   url: process.env.REDIS_URL
 });
 
 redisClient.connect().catch(error => console.error(error));
@@ -32,7 +29,7 @@ const redisStore = new RedisStore({
 
 
 const app = express();
-app.set("PORT", process.env.PORT);
+app.set("PORT", ENV_VARIABLES.PORT);
 app.set("trust proxy", 1);
 app.use(cors({
     origin: process.env.ORIGIN,
@@ -49,7 +46,7 @@ app.use(session({
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
-    cookie: {signed: true, sameSite: 'none', httpOnly: true, secure: true}
+    cookie: {signed: true, httpOnly: true, secure: true, sameSite: "none"}
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -75,7 +72,6 @@ passport.deserializeUser((id, done) => {
         });
     }
 });
-
 app.use("/api/auth", auth);
 app.use("/api/customs", customs);
 app.use("/api/defaults", defaults);
