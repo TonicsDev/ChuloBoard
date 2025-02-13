@@ -4,6 +4,7 @@ dotenv.config();
 import app from "./app.js";
 import { Server } from "socket.io";
 import bcrypt from "bcrypt";
+import { ENV_VARIABLES } from "./env_variables.js";
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
     cors: {
@@ -30,7 +31,6 @@ io.on("connection", (socket) => {
         socket.leave(channel);
     });
     socket.on("new-register", register => {
-        console.log(register);
         switch(register.type) {
             case "song":
                 socket.to(process.env.VITE_CHANNEL).emit('new-song', register);
@@ -53,7 +53,14 @@ io.on("connection", (socket) => {
     });
 
     socket.on("trigger-guau", (data) => {
-        socket.to(process.env.VITE_CHANNEL + data.id).emit("guau-alert");
+        socket.to(ENV_VARIABLES.VITE_CHANNEL + data.id).emit("guau-alert");
+    });
+
+    socket.on("trigger-card", (data) => {
+        socket.to(ENV_VARIABLES.VITE_CHANNEL + data.id).emit("new-card", {
+            cards: data.cards,
+            user: data.user
+        })
     });
 
     socket.on("notify-bot", (message) => {
